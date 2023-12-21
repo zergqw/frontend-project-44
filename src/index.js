@@ -6,7 +6,7 @@ const common = (discription, question, check, name) => {
   while (corect !== 3) {
     const num = question();
     console.log('Question:', num);
-    const userAnwr = readlineSync.question('');
+    const userAnwr = readlineSync.question('Your answer: ');
     if (check(num) === userAnwr) {
       console.log('Correct!');
       corect += 1;
