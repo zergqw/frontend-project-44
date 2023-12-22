@@ -1,4 +1,7 @@
+#!/usr/bin/env node
+
 import common from '../src/index.js';
+import sayName from '../src/cli.js';
 
 const question = () => {
   const num1 = Math.floor(Math.random() * 100);
@@ -27,4 +30,4 @@ const check = (num) => {
 };
 const discription = 'Find the greatest common divisor of given numbers.';
 const gameGCD = (name) => common(discription, question, check, name);
-export default (gameGCD);
+gameGCD(sayName());

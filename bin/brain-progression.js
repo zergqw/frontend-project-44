@@ -1,4 +1,7 @@
+#!/usr/bin/env node
+
 import common from '../src/index.js';
+import sayName from '../src/cli.js';
 
 const question = () => {
   const d = Math.floor(Math.random() * 100);
@@ -25,4 +28,4 @@ const check = (num) => {
 };
 const discription = 'What number is missing in the progression?';
 const gameProgression = (name) => common(discription, question, check, name);
-export default (gameProgression);
+gameProgression(sayName());
