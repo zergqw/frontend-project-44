@@ -3,32 +3,30 @@
 import common from '../index.js';
 import sayName from '../cli.js';
 
-const progression = () => {
-  const question = () => {
-    const d = Math.floor(Math.random() * 100);
-    let num1 = Math.floor(Math.random() * 100);
-    const secret1 = Math.floor(Math.random() * 10);
-    const array = [num1];
-    for (let i = 0; i < 9; i += 1) {
-      num1 += d;
-      array.push(num1);
-    }
-    array[secret1] = '..';
-    return array.join(' ');
-  };
-  const check = (num) => {
-    const num1 = num.split(' ');
-    const d = num1[0] !== '..' && num1[1] !== '..' ? num1[1] - num1[0] : num1[3] - num1[2];
-    let result = Number(num1[8]) + d;
-    for (let i = 0; i < 9; i += 1) {
-      if (num1[i] === '..') {
-        result = num1[i + 1] - d;
-      }
-    }
-    return String(result);
-  };
-  const discription = 'What number is missing in the progression?';
-  const gameProgression = (name) => common(discription, question, check, name);
-  gameProgression(sayName());
+const question = () => {
+  const difference = Math.floor(Math.random() * 100);
+  let numberProgressions = Math.floor(Math.random() * 100);
+  const HiddenNumber = Math.floor(Math.random() * 10);
+  const progression = [numberProgressions];
+  for (let i = 0; i < 9; i += 1) {
+    numberProgressions += difference;
+    progression.push(numberProgressions);
+  }
+  progression[HiddenNumber] = '..';
+  return progression.join(' ');
 };
-export default progression;
+const check = (num) => {
+  const answer = num.split(' ');
+  const difference = answer[0] !== '..' && answer[1] !== '..' ? answer[1] - answer[0] : answer[3] - answer[2];
+  let result = Number(answer[8]) + difference;
+  for (let i = 0; i < 9; i += 1) {
+    if (answer[i] === '..') {
+      result = answer[i + 1] - difference;
+    }
+  }
+  return String(result);
+};
+const discription = 'What number is missing in the progression?';
+const gameProgression = () => common(discription, question, check, sayName());
+
+export default gameProgression;

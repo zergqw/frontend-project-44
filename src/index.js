@@ -1,21 +1,21 @@
 import readlineSync from 'readline-sync';
 
-const common = (discription, question, check, name) => {
-  let corect = 0;
+const common = (discription, Question, check, name) => {
+  let correct = 0;
   console.log(discription);
-  while (corect !== 3) {
-    const num = question();
-    console.log('Question:', num);
-    const userAnwr = readlineSync.question('Your answer: ');
-    if (check(num) === userAnwr) {
+  while (correct !== 3) {
+    const question = Question();
+    console.log('Question:', question);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (check(question) === userAnswer) {
       console.log('Correct!');
-      corect += 1;
+      correct += 1;
     } else {
-      console.log(`'${userAnwr}' is wrong answer ;(. Correct answer was '${check(num)}'.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${check(question)}'.`);
       break;
     }
   }
-  if (corect === 3) {
+  if (correct === 3) {
     console.log(`Congratulations, ${name}!`);
   } else {
     console.log(`Let's try again, ${name}!`);
