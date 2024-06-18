@@ -8,21 +8,21 @@ const question = () => {
   const num2 = Math.floor(Math.random() * 100);
   return `${num1} ${num2}`;
 };
-const check = (answer) => {
-  const answer1 = answer.split(' ');
-  answer1[0] = Number(answer1[0]);
-  answer1[1] = Number(answer1[1]);
+const check = (Answer) => {
+  const answer = Answer.split(' ');
+  answer[0] = Number(answer[0]);
+  answer[1] = Number(answer[1]);
   let maxDivider = 0;
-  if (answer1[0] > answer1[1]) {
-    for (let i = 0; i < answer1[0]; i += 1) {
-      if (answer1[0] % i === 0 && answer1[1] % i === 0) {
+  if (answer[0] > answer[1]) {
+    for (let i = 0; i < answer[0]; i += 1) {
+      if (answer[0] % i === 0 && answer[1] % i === 0) {
         maxDivider = i;
       }
     }
     return String(maxDivider);
   }
-  for (let i = 0; i < answer1[1]; i += 1) {
-    if (answer1[0] % i === 0 && answer1[1] % i === 0) {
+  for (let i = 0; i < answer[1]; i += 1) {
+    if (answer[0] % i === 0 && answer[1] % i === 0) {
       maxDivider = i;
     }
   }
