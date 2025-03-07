@@ -1,12 +1,11 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/zergqw/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/zergqw/frontend-project-44/actions)",
-  "main": "index.js",
+  "description": "Various games on the console",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Eremenko Denis",
   "license": "ISC",
   "type": "module",
   "bin": {
