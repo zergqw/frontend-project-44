@@ -10,6 +10,7 @@
 Инструкция по установке и запуску:
 
 Для установки проекта выполните команду make install и npm link
+
 Для запуска игр используйте команды: brain-even, brain-calc, brain-gcd, brain-progression, brain-prime
 
 ### Hexlet tests and linter status:
